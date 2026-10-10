@@ -881,31 +881,37 @@
       <h3 class="modal-title">Demande de Déploiement</h3>
       <p id="modalFormula" class="modal-desc">Formule sélectionnée : </p>
 
-      <form onsubmit="handleFormSubmit(event)">
+      <form id="leadForm" action="https://formsubmit.co/fellahyoussef010@gmail.com" method="POST" onsubmit="handleFormSubmit(event)">
+        <!-- Anti-spam & Configuration FormSubmit -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" id="formSubject" name="_subject" value="[PropSync] Nouvelle Demande de Déploiement">
+        <input type="hidden" id="selectedPlanInput" name="Formule_Choisie" value="">
+
         <div class="form-group">
           <label for="agencyName">Nom de l'Agence Immobilière *</label>
-          <input type="text" id="agencyName" required placeholder="Ex: Atlas Immo Luxury">
+          <input type="text" id="agencyName" name="Nom_Agence" required placeholder="Ex: Atlas Immo Luxury">
         </div>
         <div class="form-group">
           <label for="contactEmail">Adresse Email Professionnelle *</label>
-          <input type="email" id="contactEmail" required placeholder="contact@atlasimmo.ma">
+          <input type="email" id="contactEmail" name="Email_Contact" required placeholder="contact@atlasimmo.ma">
         </div>
         <div class="form-group">
           <label for="contactPhone">Numéro de Téléphone (WhatsApp) *</label>
-          <input type="tel" id="contactPhone" required placeholder="+212 6 XX XX XX XX">
+          <input type="tel" id="contactPhone" name="Telephone_WhatsApp" required placeholder="+212 6 XX XX XX XX">
         </div>
         <div class="form-group">
           <label for="message">Spécificités techniques / Infrastructure actuelle</label>
-          <textarea id="message" rows="3" placeholder="Serveur local, VPS OVH, nombre de postes..."></textarea>
+          <textarea id="message" name="Details_Techniques" rows="3" placeholder="Serveur local, VPS OVH, nombre de postes..."></textarea>
         </div>
-        <button type="submit" class="btn-submit">Valider ma Demande</button>
+        <button type="submit" id="btnSubmitLead" class="btn-submit">Envoyer ma Demande à l'Équipe PropSync</button>
       </form>
     </div>
   </div>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2026 PropSync CRM. Développé par <a href="https://github.com/ind4x" target="_blank">ind4x</a>. Tous droits réservés.</p>
+    <p>&copy; 2026 PropSync CRM. Développé par <a href="https://github.com/ind4x" target="_blank">ind4x</a>. Contact direct : <a href="mailto:fellahyoussef010@gmail.com">fellahyoussef010@gmail.com</a></p>
     <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #475569;">
       PropSync - Solution logicielle professionnelle conforme à la loi 09-08 (protection des données à caractère personnel).
     </p>
@@ -917,6 +923,8 @@
     function openModal(formula) {
       currentFormula = formula;
       document.getElementById('modalFormula').textContent = 'Formule sélectionnée : ' + formula;
+      document.getElementById('selectedPlanInput').value = formula;
+      document.getElementById('formSubject').value = "[PropSync Lead] " + formula;
       document.getElementById('contactModal').classList.add('active');
     }
 
@@ -932,23 +940,10 @@
     };
 
     function handleFormSubmit(e) {
-      e.preventDefault();
-      const agency = document.getElementById('agencyName').value;
-      const email = document.getElementById('contactEmail').value;
-      const phone = document.getElementById('contactPhone').value;
-      
-      const subject = encodeURIComponent("[Commande PropSync] " + currentFormula + " - " + agency);
-      const body = encodeURIComponent(
-        "Bonjour,\n\nJe souhaite commander ou obtenir des informations sur la formule suivante :\n" +
-        "Formule : " + currentFormula + "\n" +
-        "Agence : " + agency + "\n" +
-        "Email : " + email + "\n" +
-        "Téléphone : " + phone + "\n\n" +
-        "Message additionnel :\n" + document.getElementById('message').value
-      );
-
-      window.location.href = "mailto:youssef.fellah@contact.me?subject=" + subject + "&body=" + body;
-      closeModal();
+      const btn = document.getElementById('btnSubmitLead');
+      btn.textContent = "Transmission en cours...";
+      btn.style.opacity = "0.75";
+      // Formulaire soumis directement via POST HTTPS vers fellahyoussef010@gmail.com
     }
   </script>
 </body>
