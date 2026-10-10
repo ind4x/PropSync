@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <!-- Gradient for Primary Structural Node -->
+    <linearGradient id="ps-primary-grad" x1="6" y1="8" x2="38" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0093a5"/>
+      <stop offset="50%" stop-color="#007190"/>
+      <stop offset="100%" stop-color="#12354e"/>
+    </linearGradient>
+
+    <!-- Gradient for Synchronization Accent -->
+    <linearGradient id="ps-accent-grad" x1="18" y1="12" x2="42" y2="36" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f99d1b"/>
+      <stop offset="100%" stop-color="#f3a257"/>
+    </linearGradient>
+
+    <filter id="ps-shadow" x="0" y="2" width="48" height="46" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#051230" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#ps-shadow)">
+    <!-- Base Architectural Pillar / "P" stem -->
+    <rect x="7" y="10" width="7" height="28" rx="3.5" fill="url(#ps-primary-grad)"/>
+
+    <!-- Upper Prop Canopy (Isometric roof / Upper loop) -->
+    <path d="M14 10H27C33.075 10 38 14.925 38 21C38 27.075 33.075 32 27 32H14V25H26.5C28.709 25 30.5 23.209 30.5 21C30.5 18.791 28.709 17 26.5 17H14V10Z"
+          fill="url(#ps-primary-grad)"/>
+
+    <!-- Dynamic "Sync" Interlocking Circuit Node -->
+    <path d="M21 21C21 17.686 23.686 15 27 15C30.314 15 33 17.686 33 21C33 24.314 30.314 27 27 27C24.791 27 23 28.791 23 31V38H30C36.627 38 42 32.627 42 26"
+          stroke="url(#ps-accent-grad)" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Pulse Synchronization Dot -->
+    <circle cx="21" cy="38" r="3" fill="#f3a257"/>
+    <circle cx="27" cy="21" r="2.5" fill="#ffffff"/>
+  </g>
+</svg>

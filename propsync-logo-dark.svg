@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 44" fill="none">
+  <defs>
+    <linearGradient id="ps-dark-grad" x1="4" y1="4" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0093a5"/>
+      <stop offset="50%" stop-color="#007190"/>
+      <stop offset="100%" stop-color="#12354e"/>
+    </linearGradient>
+    <linearGradient id="ps-accent-loop" x1="16" y1="10" x2="40" y2="34" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f99d1b"/>
+      <stop offset="100%" stop-color="#f3a257"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Icon Mark -->
+  <g transform="translate(2, 2)">
+    <!-- Base Architectural Pillar / "P" stem -->
+    <rect x="4" y="6" width="6" height="26" rx="3" fill="url(#ps-dark-grad)"/>
+
+    <!-- Upper Prop Loop / Architecture arch -->
+    <path d="M10 6H22C27.523 6 32 10.477 32 16C32 21.523 27.523 26 22 26H10V20H21.5C23.709 20 25.5 18.209 25.5 16C25.5 13.791 23.709 12 21.5 12H10V6Z"
+          fill="url(#ps-dark-grad)"/>
+
+    <!-- Dynamic "Sync" Arc & Node -->
+    <path d="M18 16C18 13.239 20.239 11 23 11C25.761 11 28 13.239 28 16C28 18.761 25.761 21 23 21C21.343 21 20 22.343 20 24V30H26C31.523 30 36 25.523 36 20"
+          stroke="url(#ps-accent-loop)" stroke-width="3" stroke-linecap="round"/>
+
+    <circle cx="18" cy="30" r="2.5" fill="#f3a257"/>
+    <circle cx="23" cy="16" r="2" fill="#ffffff"/>
+  </g>
+
+  <!-- Typography: Prop (White) + Sync (Golden Yellow) -->
+  <text x="50" y="28" font-family="Plus Jakarta Sans, Inter, -apple-system, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.03em" fill="#ffffff">
+    Prop<tspan fill="#f3a257" font-weight="700">Sync</tspan>
+  </text>
+  <rect x="156" y="16" width="48" height="14" rx="3" fill="rgba(0, 113, 144, 0.25)" stroke="rgba(0, 147, 165, 0.4)" stroke-width="0.75"/>
+  <text x="180" y="26.5" font-family="Plus Jakarta Sans, Inter, -apple-system, sans-serif" font-size="8.5" font-weight="700" letter-spacing="0.05em" fill="#0093a5" text-anchor="middle">
+    PROPTECH
+  </text>
+</svg>
